@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df1eccda-8867-48c0-91ac-8248f1869465" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://etracker.cc/BulkSMS/SoapService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SoapService.wsdl" MetadataType="Wsdl" ID="811673a7-a85d-444d-97e5-83ce93143c78" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?wsdl" />
+    <MetadataFile FileName="SoapService.xsd" MetadataType="Schema" ID="820e1c83-11fa-4bbc-b113-12551bc084d9" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SoapService1.xsd" MetadataType="Schema" ID="fe1348be-d3f0-47e8-bd59-687c46ecc88d" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SoapService.disco" MetadataType="Disco" ID="2c4d0e21-f1df-4349-a6f3-59ef49139c05" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?disco" />
+    <MetadataFile FileName="SoapService2.xsd" MetadataType="Schema" ID="e3a580e8-c593-40fd-9f90-9abb2ecfe49d" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
