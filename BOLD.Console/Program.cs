@@ -2,6 +2,7 @@
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using BOLD.Console.SoapService;
+using System.Collections.Generic;
 
 namespace BOLD.Console
 {
@@ -94,6 +95,66 @@ namespace BOLD.Console
                 proxy.Send(soapParam);
             }
             #endregion
+
+            #region//SENDING EMAIL VIA HTTP POST
+            List<Recipient> sendList = new List<Recipient>();
+            sendList.Add(new Recipient { Name = "Recipient", Email = "Recipient@macrokiosk.com" });
+
+            string emailParameter = JsonConvert.SerializeObject(new
+            {
+                to = sendList,
+                sender = new Sender { Name = "Sender", Email = "Sender@macrokiosk.com" },
+                htmlContent = "Email Test Content",
+                subject = "Email Test Subject",
+                replyTo = new Sender { Name = "ReplyTo", Email = "ReplyTo@macrokiosk.com" },
+                username = "username",
+                password = "password",
+                serviceId = "serviceID",
+                IsHashed = false
+            });
+                        
+            using (var httpClient = new HttpClient())
+            {
+                //Store the JSON string as the content to be sent to the web API.
+                //Specify the HTTP Content-Type header as application/json
+                //Specify application/xml if the content is in XML format
+                var emailContent = new StringContent(emailParameter);
+                emailContent.Headers.ContentType.MediaType = "application/json";
+
+                //Assign the value of the Accept ("application/xml" or "application/json header
+                //for an HTTP request in order to get the response in the desired format.
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue
+                ("application/json"));
+
+                using (var response = httpClient.PostAsync("http://www.etracker.cc/BulkEmail/Send", emailContent).Result)
+                {
+                    // by calling .Content a synchronous call will be performed
+                    using (var responseContent = response.Content)
+                    {
+                        // by calling .Result the result will be read synchronously
+                        var POSThttpContent = responseContent.ReadAsStringAsync().Result;
+                    }
+
+                    var POSThttpStatusCode = response.StatusCode;
+                    var POSThttpStatusDescription = response.ReasonPhrase;
+                }
+            }            #endregion
+        }
+
+        public class Sender
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+            [JsonProperty("email")]
+            public string Email { get; set; }
+        }
+
+        public class Recipient
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+            [JsonProperty("email")]
+            public string Email { get; set; }
         }
     }
 }
