@@ -12,7 +12,7 @@ namespace BOLD.Console
         {
             #region //SENDING SMS VIA REST HTTP GET
             var requestUri = string.Format(
-                    "http://www.etracker.cc/bulksms/send?user={0}&pass={1}&type={2}&to={3}&from={4}&text={5}&servid={6}",
+                    "https://www.etracker.cc/bulksms/send?user={0}&pass={1}&type={2}&to={3}&from={4}&text={5}&servid={6}",
                     "username",
                     "password",
                     "0",
@@ -64,7 +64,7 @@ namespace BOLD.Console
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue
                 ("application/json"));
 
-                using (var response = httpClient.PostAsync("http://www.etracker.cc/bulksms/send", content).Result)
+                using (var response = httpClient.PostAsync("https://www.etracker.cc/bulksms/send", content).Result)
                 {
                     // by calling .Content a synchronous call will be performed
                     using (var responseContent = response.Content)
@@ -126,7 +126,7 @@ namespace BOLD.Console
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue
                 ("application/json"));
 
-                using (var response = httpClient.PostAsync("http://www.etracker.cc/BulkEmail/Send", emailContent).Result)
+                using (var response = httpClient.PostAsync("https://www.etracker.cc/BulkEmail/Send", emailContent).Result)
                 {
                     // by calling .Content a synchronous call will be performed
                     using (var responseContent = response.Content)

@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://etracker.cc/BulkSMS/SoapService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://etracker.cc/BulkSMS/SoapService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SoapService.wsdl" MetadataType="Wsdl" ID="811673a7-a85d-444d-97e5-83ce93143c78" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?wsdl" />
-    <MetadataFile FileName="SoapService.xsd" MetadataType="Schema" ID="820e1c83-11fa-4bbc-b113-12551bc084d9" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SoapService1.xsd" MetadataType="Schema" ID="fe1348be-d3f0-47e8-bd59-687c46ecc88d" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SoapService.disco" MetadataType="Disco" ID="2c4d0e21-f1df-4349-a6f3-59ef49139c05" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?disco" />
-    <MetadataFile FileName="SoapService2.xsd" MetadataType="Schema" ID="e3a580e8-c593-40fd-9f90-9abb2ecfe49d" SourceId="1" SourceUrl="http://etracker.cc/BulkSMS/SoapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SoapService1.disco" MetadataType="Disco" ID="873004e4-149d-43bc-a139-bfbad6b24dac" SourceId="1" SourceUrl="http://www.etracker.cc/BulkSMS/SoapService.svc?disco" />
+    <MetadataFile FileName="SoapService3.xsd" MetadataType="Schema" ID="4a6b3e06-49a3-46cb-8d67-662d4874b97e" SourceId="1" SourceUrl="http://www.etracker.cc/BulkSMS/SoapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SoapService1.wsdl" MetadataType="Wsdl" ID="df9b3942-a065-4b17-94f2-916ae57c1a97" SourceId="1" SourceUrl="http://www.etracker.cc/BulkSMS/SoapService.svc?wsdl" />
+    <MetadataFile FileName="SoapService31.xsd" MetadataType="Schema" ID="85516441-f0e8-4e4e-83ba-9eaeb702bbcb" SourceId="1" SourceUrl="http://www.etracker.cc/BulkSMS/SoapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SoapService32.xsd" MetadataType="Schema" ID="cc145fc3-3dad-40cd-ae78-6545950f4bcd" SourceId="1" SourceUrl="http://www.etracker.cc/BulkSMS/SoapService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

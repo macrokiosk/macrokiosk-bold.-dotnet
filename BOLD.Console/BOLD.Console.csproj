@@ -57,14 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\SoapService\SoapService.wsdl" />
-    <None Include="Connected Services\SoapService\SoapService.xsd">
+    <None Include="Connected Services\SoapService\SoapService1.wsdl" />
+    <None Include="Connected Services\SoapService\SoapService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SoapService\SoapService1.xsd">
+    <None Include="Connected Services\SoapService\SoapService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SoapService\SoapService2.xsd">
+    <None Include="Connected Services\SoapService\SoapService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -74,9 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\SoapService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\SoapService\SoapService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SoapService\configuration91.svcinfo" />
@@ -89,6 +86,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SoapService\SoapService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

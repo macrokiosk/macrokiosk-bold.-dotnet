@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/+puYdjUwTZ4sAMXHmXnufohuJQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GiPelmqItEEELVVzRvxYq7H+K94=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="basicHttpService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="basicHttpService" contract="SoapService.ISoapService" bindingType="basicHttpBinding" address="http://etracker.cc/BulkSMS/SoapService.svc" bindingConfiguration="basicHttpService">
+    <endpoint name="basicHttpService" contract="SoapService.ISoapService" bindingType="basicHttpBinding" address="http://www.etracker.cc/BulkSMS/SoapService.svc" bindingConfiguration="basicHttpService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://etracker.cc/BulkSMS/SoapService.svc</serializedValue>
+          <serializedValue>http://www.etracker.cc/BulkSMS/SoapService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
