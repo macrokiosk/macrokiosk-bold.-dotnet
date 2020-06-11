@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using BOLD.Console.SoapService;
@@ -138,7 +139,59 @@ namespace BOLD.Console
                     var POSThttpStatusCode = response.StatusCode;
                     var POSThttpStatusDescription = response.ReasonPhrase;
                 }
-            }            #endregion
+            }
+            #endregion
+
+            #region//SENDING MMS VIA HTTP POST
+            //Assign values to variables
+            string user = "username";
+            string password = "password";
+            string serviceid = "serviceid";
+            string subject = "MMS Title";
+            string text = "MMS Text Message";
+            string recipients = JsonConvert.SerializeObject(new string[] { "60103456789", "60123456789" });
+            string iscontenturi = "1";
+            string MMSContent = null;
+
+            if (iscontenturi == "0")
+            {
+                //The below bytes value is only an example. Replace it if your content is in bytes.
+                MMSContent = JsonConvert.SerializeObject(new byte[] { 0x01, 0x9A, 0x3D, 0x23, 0xAB, 0x5A });
+            }
+            else if (iscontenturi == "1")
+            {
+                MMSContent = JsonConvert.SerializeObject(@"http://res.cloudinary.com/demo/image/upload/v1525209117/folder1/folder2/sample.jpg");
+            }
+
+            //"0" represents file type jpg. [0 = jpg], [1 = jpeg], [2 = png], [3 = bmp], [4 = gif], [11 = mp3], [12 = mid], [13 = midi], [14 = wav], [15 = amr], [21 = mp4], [22 = 3gp]
+            string multimediafiletype = "0";
+
+            //Multipart Form Data. Each MultipartFormDataContentshould have the string name as specified.
+            MultipartFormDataContent mContent = new MultipartFormDataContent();
+            mContent.Add(new StringContent(user), "user");
+            mContent.Add(new StringContent(password), "password");
+            mContent.Add(new StringContent(serviceid), "serviceid");
+            mContent.Add(new StringContent(subject), "subject");
+            mContent.Add(new StringContent(text), "text");
+            mContent.Add(new StringContent(recipients), "recipients");
+            mContent.Add(new StringContent(iscontenturi), "iscontenturi");
+            mContent.Add(new StringContent(MMSContent), "content");
+            mContent.Add(new StringContent(multimediafiletype), "multimediafiletype");
+
+            string url = "http://mms.etracker.cc/MMSWebAPI/api/BulkMMS/";
+            string requestID = DateTime.Now.ToString("yyyyMMddhhmmssfff");
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, $"{url}{requestID}");
+            req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
+            req.Content = mContent;
+
+            HttpClient httpClientMMS = new HttpClient();
+
+            using (var response = httpClientMMS.SendAsync(req).Result)
+            {
+                var statusCode = response.StatusCode;
+                var message = response.ReasonPhrase;
+            }
+            #endregion 
         }
 
         public class Sender
