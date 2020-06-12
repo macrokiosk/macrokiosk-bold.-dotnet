@@ -56,7 +56,7 @@ namespace BOLD.Tag
             string parameter2 = JsonConvert.SerializeObject(new
             {
                 ActivityKey = "7Oub6Apzu4EGvI3XD9OkmQyncXToEAAA", //Valid ActivityKey which configured at BOLD.Tag portal
-                PredefinedValues = new Recepient { Name = "Max", Email = "60123456789" },
+                PredefinedValues = new Recepient { Name = "Max", MobileNo = "60123456789" },
             });
 
             using (var httpClient = new HttpClient())
@@ -93,10 +93,10 @@ namespace BOLD.Tag
 
         public class Recepient
         {
-            [JsonProperty("name")]
+            [JsonProperty("Name")]
             public string Name { get; set; }
             [JsonProperty("MobileNo")]
-            public string Email { get; set; }
+            public string MobileNo { get; set; }
         }
     }
 }
